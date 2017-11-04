@@ -1,4 +1,4 @@
-package ICS_Adv_Prog_master.AdvancedProgSkills.newpackage;
+package ICS_Adv_Prog_master.AdvancedProgSkills.Question_1;
 
 class Divider {
 
