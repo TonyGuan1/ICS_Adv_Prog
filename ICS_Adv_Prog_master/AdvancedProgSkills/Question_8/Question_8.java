@@ -4,17 +4,20 @@ import java.util.Scanner;
 
 public class Question_8 {
 
-    public static void hanoi(int discs) {
-        int moves = (int) (Math.pow(2, discs) - 1);
-        System.out.println("Minimum number of moves : " + moves);
+    public static void Hanoi(int disk, int sum) {
+        if (disk == 0) {
+            System.out.println(sum + 1 + " Moves required");
+        } else {
+            sum += (int) (java.lang.Math.pow(2, disk));
+            Hanoi(disk - 1, sum);
+        }
     }
 
     public static void main(String[] args) {
-        Scanner reader = new Scanner(System.in);
-
-        System.out.print("Enter the number of discs: ");
-        int discs = reader.nextInt();
-        hanoi(discs);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number of disks");
+        int disk = (scanner.nextInt() - 1);
+        int sum = 0;
+        Hanoi(disk, sum);
     }
-
 }

@@ -4,24 +4,23 @@ import java.util.Scanner;
 
 public class Question_7 {
 
-    public static void recurisveFunction(int increment, int end_value) {
-        int sum = 0;
-        for (int x = 0; x < end_value; x = x + increment) {
-            sum = x + sum;
+    public static void Total_Sum(int increment, int currentVal, int sum, int endValue) {
+        if (currentVal > endValue) {
+            System.out.println(sum);
+        } else {
+            sum += currentVal;
+            Total_Sum(increment, currentVal + increment, sum, endValue);
         }
-        System.out.println("The sum is: " + sum);
     }
 
     public static void main(String[] args) {
+        int currentVal = 0, sum = 0;
         Scanner reader = new Scanner(System.in);
-
-        System.out.print("Enter the increment:");
+        System.out.println("Enter increment value ");
         int increment = reader.nextInt();
+        System.out.println("Enter end value ");
+        int endValue = reader.nextInt();
 
-        System.out.print("Enter the end value:");
-        int end_value = reader.nextInt();
-
-        recurisveFunction(increment, end_value);
+        Total_Sum(increment, currentVal, sum, endValue);
     }
-
 }
