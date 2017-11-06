@@ -11,9 +11,10 @@ public class Question_5 {
 
     public static void main(String[] args) {
         int i = 0;//Initalize i
-        String[] list = {"Grapes", "Pears", "Peach", "Orange", "Cherry", "Mango"};
+        String[] list = {"Grapes", "Pears", "Peach", "Orange", "Cherry", "Mango" };
         System.out.println(Arrays.toString(list));
-        System.out.println("What item would you like to search for ? ");
+        System.out.println("Type 'exit' to stop.");
+        System.out.println("What item would you like to search for? ");
         while (true) {
             String item = reader.nextLine();
             if (item.equals("exit")) {

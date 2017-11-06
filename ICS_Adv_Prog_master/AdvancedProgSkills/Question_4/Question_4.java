@@ -72,6 +72,8 @@ public class Question_4 extends javax.swing.JFrame {
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
         // TODO add your handling code here:
+        char x;
+        int l;
         try {
             FileReader reader = new FileReader("\\\\ad.ocdsb.ca\\studenthome\\3\\S199817793\\NetBeansProjects\\JavaApplication1\\src\\ICS_Adv_Prog_master\\AdvancedProgSkills\\Question_4\\fullNames.txt");//Text for Reading
             String line;
@@ -80,10 +82,13 @@ public class Question_4 extends javax.swing.JFrame {
             FileWriter writer = new FileWriter("\\\\ad.ocdsb.ca\\studenthome\\3\\S199817793\\NetBeansProjects\\JavaApplication1\\src\\ICS_Adv_Prog_master\\AdvancedProgSkills\\Question_4\\initals.txt", true);//Text for writing
             BufferedWriter bw = new BufferedWriter(writer);
             while ((line = br.readLine()) != null) {
-                line = line.trim();//Removes white spaces
-                if (line.length() > 0) { //Blank lines
-                    bw.write(line.charAt(0));
-                    bw.newLine();
+                l = line.length();
+                for (int i = 0; i < l; i++) {
+                    x = line.charAt(i); //taking out one character at a time from the sentence
+                    if (x == ' ') //if the character is a space, printing the next Character along with a fullstop
+                    {
+                        bw.write(line.toUpperCase().charAt(i + 1));
+                    }
                 }
             }
             System.out.println("Done");
